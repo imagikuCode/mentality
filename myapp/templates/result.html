@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Result</title>
+</head>
+<body>
+    <h2>Result:</h2>
+    <p>The following symptoms were reported:</p>
+    <ul>
+        {% for symptom in symptoms %}
+        <li>{{ symptom }}</li>
+        {% endfor %}
+    </ul>
+    <p>Based on the reported symptoms, the following {{ num_conditions }} conditions are possible:</p>
+    <ul>
+      {% for condition in diagnosis.split('\n') %}
+      {% if condition %}
+      <li>{{ condition[3:] }}</li>
+      {% endif %}
+      {% endfor %}
+</body>
+</html>
+
+
